@@ -1,9 +1,9 @@
 <template>
   <form @submit.prevent="postData">
     <div class="input-form-container">
-      <div class="input-container" v-if="this.route !== 'http://localhost:5173/refill'">
-        <label for="item" v-if="this.route !== 'http://localhost:5173/repair'">Предмет закупки</label>
-        <label for="item" v-if="this.route !== 'http://localhost:5173/main'">Предмет ремонта</label>
+      <div class="input-container" v-if="this.$route.path !== '/refill'">
+        <label for="item" v-if="this.$route.path !== '/repair'">Предмет закупки</label>
+        <label for="item" v-if="this.$route.path !== '/'">Предмет ремонта</label>
         <input type="text" name="item" id="item" v-model.trim="formData.item" placeholder="Введите предмет">
       </div>
       <div class="input-container">
@@ -43,7 +43,6 @@ export default {
   props: ['saveData'],
   data() {
     return {
-      route: window.location.href,
       formData: {
         item: '',
         room: '',
@@ -51,6 +50,12 @@ export default {
         date: '',
       },
       message: '',
+    }
+  },
+  computed: {
+    shouldHide() {
+      const path = this.$route.path;
+      return path.includes('/repair') || path.includes('/refill');
     }
   },
   methods: {
