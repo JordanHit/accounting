@@ -54,7 +54,7 @@ export default {
           });
     },
     getData() {
-      this.$http.get('/api/data')
+      this.$http.get('https://accounting-tir9.onrender.com/api/data')
           .then((res) => {
             this.items = res.data;
           })
