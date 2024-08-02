@@ -1,0 +1,117 @@
+<template>
+  <aside class="side-container">
+    <div class="content-container">
+      <div class="header-container">
+        <div class="logo-container">
+          <svg xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1" viewBox="0 0 24 24" width="35"
+               height="35" fill="white">
+            <path
+                d="M16.5,0c-4.206,0-7.5,1.977-7.5,4.5v2.587c-.484-.057-.985-.087-1.5-.087C3.294,7,0,8.977,0,11.5v8c0,2.523,3.294,4.5,7.5,4.5,3.416,0,6.231-1.304,7.167-3.146,.597,.087,1.207,.146,1.833,.146,4.206,0,7.5-1.977,7.5-4.5V4.5c0-2.523-3.294-4.5-7.5-4.5Zm0,2c3.148,0,5.5,1.32,5.5,2.5s-2.352,2.5-5.5,2.5-5.5-1.32-5.5-2.5,2.352-2.5,5.5-2.5ZM7.5,9c3.148,0,5.5,1.32,5.5,2.5s-2.352,2.5-5.5,2.5-5.5-1.32-5.5-2.5,2.352-2.5,5.5-2.5ZM2,14.582c1.36,.875,3.303,1.418,5.5,1.418s4.14-.543,5.5-1.418v.918c0,1.18-2.352,2.5-5.5,2.5s-5.5-1.32-5.5-2.5v-.918Zm5.5,7.418c-3.148,0-5.5-1.32-5.5-2.5v-.918c1.36,.875,3.303,1.418,5.5,1.418s4.14-.543,5.5-1.418v.918c0,1.18-2.352,2.5-5.5,2.5Zm9-3c-.514,0-1.012-.047-1.5-.116v-1.98c.492,.058,.99,.096,1.5,.096,2.197,0,4.14-.543,5.5-1.418v.918c0,1.18-2.352,2.5-5.5,2.5Zm0-4c-.514,0-1.012-.047-1.5-.116v-1.98c.492,.058,.99,.096,1.5,.096,2.197,0,4.14-.543,5.5-1.418v.918c0,1.18-2.352,2.5-5.5,2.5Zm0-4c-.542,0-1.066-.051-1.578-.127-.198-.887-.809-1.684-1.721-2.321,.992,.285,2.106,.449,3.299,.449,2.197,0,4.14-.543,5.5-1.418v.918c0,1.18-2.352,2.5-5.5,2.5Z"/>
+          </svg>
+
+        </div>
+        <div class="name-container">
+          <span>ИнкСервис</span>
+        </div>
+      </div>
+      <div class="menu-items-container">
+        <router-link to="/main">
+          <svg xmlns="http://www.w3.org/2000/svg" id="Outline" viewBox="0 0 24 24" width="24" height="24" fill="white">
+            <path
+                d="M22.713,4.077A2.993,2.993,0,0,0,20.41,3H4.242L4.2,2.649A3,3,0,0,0,1.222,0H1A1,1,0,0,0,1,2h.222a1,1,0,0,1,.993.883l1.376,11.7A5,5,0,0,0,8.557,19H19a1,1,0,0,0,0-2H8.557a3,3,0,0,1-2.82-2h11.92a5,5,0,0,0,4.921-4.113l.785-4.354A2.994,2.994,0,0,0,22.713,4.077ZM21.4,6.178l-.786,4.354A3,3,0,0,1,17.657,13H5.419L4.478,5H20.41A1,1,0,0,1,21.4,6.178Z"/>
+            <circle cx="7" cy="22" r="2"/>
+            <circle cx="17" cy="22" r="2"/>
+          </svg>
+          <span>Закупка</span>
+        </router-link>
+        <router-link to="/">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="white">
+            <g id="_01_align_center" data-name="01 align center">
+              <path
+                  d="M12,2a10.032,10.032,0,0,1,7.122,3H15V7h5.143A1.859,1.859,0,0,0,22,5.143V0H20V3.078A11.982,11.982,0,0,0,0,12H2A10.011,10.011,0,0,1,12,2Z"/>
+              <path
+                  d="M22,12A9.986,9.986,0,0,1,4.878,19H9V17H3.857A1.859,1.859,0,0,0,2,18.857V24H4V20.922A11.982,11.982,0,0,0,24,12Z"/>
+            </g>
+          </svg>
+          <span>Заправка</span>
+        </router-link>
+        <router-link to="/">
+          <svg xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1" viewBox="0 0 24 24" width="24"
+               height="24" fill="white">
+            <path
+                d="M15,24c-.553,0-1-.447-1-1v-1.398c0-1.505,.805-2.853,2.1-3.516,3.022-1.55,4.9-4.62,4.9-8.013,0-3.455-1.928-6.55-5.03-8.078l.03,6.005c0,2.206-1.794,4-4,4s-4-1.794-4-4V2.012C4.928,3.523,3,6.618,3,10.073c0,3.393,1.878,6.463,4.9,8.013,1.295,.663,2.1,2.011,2.1,3.516v1.398c0,.553-.447,1-1,1s-1-.447-1-1v-1.398c0-.739-.397-1.421-1.012-1.736-3.693-1.894-5.988-5.646-5.988-9.792C1,5.852,3.355,2.068,7.146,.2c.61-.3,1.321-.263,1.901,.101,.597,.371,.953,1.011,.953,1.711v5.988c0,1.103,.897,2,2,2s2-.897,2-2V2.012c0-.7,.356-1.34,.953-1.711,.581-.362,1.293-.399,1.9-.101,3.791,1.868,6.146,5.651,6.146,9.873,0,4.146-2.295,7.898-5.988,9.792-.614,.315-1.012,.997-1.012,1.736v1.398c0,.553-.447,1-1,1Z"/>
+          </svg>
+          <span>Ремонт</span>
+        </router-link>
+      </div>
+    </div>
+  </aside>
+</template>
+<script>
+export default {
+  name: 'SideBar',
+  data() {
+    return {}
+  }
+}
+</script>
+<style lang="scss" scoped>
+.side-container {
+  position: fixed;
+  top: 30px;
+  left: 20px;
+  bottom: 30px;
+  width: 250px;
+  background-color: var(--blue);
+  padding: 20px;
+  border-radius: 30px;
+  overflow: auto;
+
+  .content-container {
+    .header-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      margin-top: 10px;
+
+      .logo-container {
+
+      }
+
+      .name-container {
+        font-size: 26px;
+        font-weight: bold;
+        color: var(--white);
+      }
+    }
+
+    .menu-items-container {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      margin-top: 36px;
+
+      a, :visited {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        width: 100%;
+        height: 50px;
+        border-radius: 8px;
+        padding: 14px 16px;
+        font-weight: 600;
+        font-size: 16px;
+        color: var(--white);
+        text-decoration: none;
+        transition: 0.3s;
+
+      }
+
+      a:hover {
+        background-color: var(--blue-light)
+      }
+    }
+  }
+
+}
+</style>
