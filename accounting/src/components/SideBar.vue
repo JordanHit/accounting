@@ -24,7 +24,7 @@
           </svg>
           <span>Закупка</span>
         </router-link>
-        <router-link to="/">
+        <router-link to="/refill">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="white">
             <g id="_01_align_center" data-name="01 align center">
               <path
@@ -35,7 +35,7 @@
           </svg>
           <span>Заправка</span>
         </router-link>
-        <router-link to="/">
+        <router-link to="/repair">
           <svg xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1" viewBox="0 0 24 24" width="24"
                height="24" fill="white">
             <path
@@ -66,6 +66,7 @@ export default {
   padding: 20px;
   border-radius: 30px;
   overflow: auto;
+  z-index: 999;
 
   .content-container {
     .header-container {

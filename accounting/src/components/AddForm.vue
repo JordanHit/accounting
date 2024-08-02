@@ -1,9 +1,10 @@
 <template>
   <form @submit.prevent="postData">
     <div class="input-form-container">
-      <div class="input-container">
-        <label for="item">Предмет закупки</label>
-        <input type="text" name="item" id="item" v-model.trim="formData.item" placeholder="Введите товар">
+      <div class="input-container" v-if="this.route !== 'http://localhost:5173/refill'">
+        <label for="item" v-if="this.route !== 'http://localhost:5173/repair'">Предмет закупки</label>
+        <label for="item" v-if="this.route !== 'http://localhost:5173/main'">Предмет ремонта</label>
+        <input type="text" name="item" id="item" v-model.trim="formData.item" placeholder="Введите предмет">
       </div>
       <div class="input-container">
         <label for="room">Кабинет</label>
@@ -11,35 +12,55 @@
       </div>
       <div class="input-container">
         <label for="count">Количество</label>
-        <input type="text" name="count" id="count" v-model.trim.number="formData.count" placeholder="Введите количество">
+        <input type="text" name="count" id="count" v-model.trim.number="formData.count"
+               placeholder="Введите количество">
+      </div>
+      <div class="date-container">
+        <vue-date-picker v-model="formData.date" class="date"
+                         :enable-time-picker="false"
+                         :start-date="new Date()"
+                         locale="ru"
+                         cancelText="Отменить"
+                         selectText="Применить"
+                         placeholder="Выберите дату"
+                         id="datePicker"></vue-date-picker>
       </div>
     </div>
     <div class="button-container">
       <button type="submit">Добавить</button>
     </div>
   </form>
-  <p>{{message}}</p>
+  <p>{{ message }}</p>
 </template>
 
 <script>
+import VueDatePicker from '@vuepic/vue-datepicker';
+import '@vuepic/vue-datepicker/dist/main.css'
+
 export default {
   name: "AddForm",
-  props:['saveData'],
+  components: {VueDatePicker},
+  props: ['saveData'],
   data() {
     return {
+      route: window.location.href,
       formData: {
         item: '',
         room: '',
         count: '',
-        date: new Date().toLocaleDateString(),
+        date: '',
       },
       message: '',
     }
   },
   methods: {
-    postData(){
+    postData() {
+      this.formData.date = new Intl.DateTimeFormat("ru", {dateStyle: "short"}).format(this.formData.date)
       this.saveData(this.formData)
-      this.formData = ''
+      this.formData.item = ''
+      this.formData.room = ''
+      this.formData.count = ''
+      this.formData.date = ''
     },
   }
 }
@@ -77,6 +98,10 @@ form {
         caret-color: var(black);
         padding: 0 10px;
       }
+    }
+    .date-container{
+      width: 300px;
+      margin-top:4px;
     }
   }
 

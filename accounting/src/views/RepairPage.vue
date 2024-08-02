@@ -1,6 +1,6 @@
 <template>
   <main>
-    <h1>Закупки</h1>
+    <h1>Ремонт техники</h1>
     <div class="add-items-container">
       <AddForm :saveData="saveData"></AddForm>
     </div>
@@ -17,16 +17,20 @@
           theme-color="rgba(32, 150, 188, 0.68)"
       />
     </div>
+    <div class="chart-container">
+      <bar-chart v-if="loaded" :items="items"></bar-chart>
+    </div>
   </main>
 </template>
 <script>
 import AddForm from "@/components/AddForm.vue";
 import Vue3EasyDataTable from 'vue3-easy-data-table';
 import 'vue3-easy-data-table/dist/style.css';
+import BarChart from "@/components/BarChart.vue";
 
 export default {
-  name: 'MainPage',
-  components: {AddForm, Vue3EasyDataTable},
+  name: 'RepairPage',
+  components: {BarChart, AddForm, Vue3EasyDataTable},
   data() {
     return {
       message: [],
@@ -37,6 +41,7 @@ export default {
         {text: "Дата", value: "date", sortable: true},
       ],
       items: [],
+      loaded: false,
     }
   },
   mounted() {
@@ -44,9 +49,10 @@ export default {
   },
   methods: {
     saveData(formData) {
-      this.$http.post('/api/save', formData)
+      this.$http.post('/api/save1', formData)
           .then((res) => {
             this.message = res.data;
+            this.loaded = false
             this.getData()
           })
           .catch((error) => {
@@ -54,9 +60,10 @@ export default {
           });
     },
     getData() {
-      this.$http.get('/api/data')
+      this.$http.get('/api/data1')
           .then((res) => {
             this.items = res.data;
+            this.loaded = true
           })
           .catch((error) => {
             console.error(error)
@@ -103,6 +110,11 @@ main {
 
       --easy-table-loading-mask-background-color: var(--blue);
     }
+  }
+  .chart-container{
+    width: 1000px;
+    height: 600px;
+    margin-top: 30px;
   }
 }
 

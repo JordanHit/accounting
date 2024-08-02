@@ -15,15 +15,10 @@ export default defineConfig({
   },
   server: {
     proxy: {
-      '/api/save': {
-        target: 'http://localhost:3000/api/save',
+      '/api': {
+        target: 'http://localhost:3000/api',
         changeOrigin: true,
-        rewrite: (path) => path.replace(/^\/api\/save/, ''),
-      },
-      '/api/data': {
-        target: 'http://localhost:3000/api/data',
-        changeOrigin: true,
-        rewrite: (path) => path.replace(/^\/api\/data/, ''),
+        rewrite: (path) => path.replace(/^\/api/, ''),
       },
     },
   },
