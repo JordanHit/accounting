@@ -49,7 +49,7 @@ export default {
   },
   methods: {
     saveData(formData) {
-      this.$http.post('/api/save1', formData)
+      this.$http.post(`${apiUrl}/save1`, formData)
           .then((res) => {
             this.message = res.data;
             this.loaded = false
@@ -60,7 +60,7 @@ export default {
           });
     },
     getData() {
-      this.$http.get('/api/data1')
+      this.$http.get(`${apiUrl}/data1`)
           .then((res) => {
             this.items = res.data;
             this.loaded = true
