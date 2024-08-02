@@ -44,7 +44,7 @@ export default {
   },
   methods: {
     saveData(formData) {
-      this.$http.post('api/save', formData)
+      this.$http.post('/api/save', formData)
           .then((res) => {
             this.message = res.data;
             this.getData()
