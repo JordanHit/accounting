@@ -1,4 +1,5 @@
 const express = require('express');
+const cors = require('cors');
 const bodyParser = require('body-parser');
 const fs = require('fs');
 const path = require('path');
@@ -7,6 +8,15 @@ const app = express();
 const PORT = 3000;
 
 app.use(bodyParser.json());
+
+const corsOptions = {
+    origin: 'https://accounting-smoky.vercel.app', // Разрешите доступ только с этого домена
+    methods: ['GET', 'POST', 'PUT', 'DELETE'], // Укажите разрешенные методы
+    credentials: true, // Разрешить отправку куки
+};
+
+// Используйте CORS middleware
+app.use(cors(corsOptions));
 
 // Функция для записи данных в JSON файл
 function saveDataToFile(filePath, newData, res) {
