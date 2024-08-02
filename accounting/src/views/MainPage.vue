@@ -44,7 +44,7 @@ export default {
   },
   methods: {
     saveData(formData) {
-      this.$http.post('/api/save', formData)
+      this.$http.post('/render/save', formData)
           .then((res) => {
             this.message = res.data;
             this.getData()
@@ -54,7 +54,7 @@ export default {
           });
     },
     getData() {
-      this.$http.get('https://accounting-tir9.onrender.com/api/data')
+      this.$http.get('/render/data')
           .then((res) => {
             this.items = res.data;
           })
