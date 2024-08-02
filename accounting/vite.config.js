@@ -15,10 +15,10 @@ export default defineConfig({
   },
   server: {
     proxy: {
-      '/render': {
+      '/api': {
         target: 'https://accounting-tir9.onrender.com',
         changeOrigin: true,
-        rewrite: (path) => path.replace(/^\/render/, ''),
+        rewrite: (path) => path.replace(/^\/api/, ''),
       },
     },
   },

@@ -44,7 +44,8 @@ export default {
   },
   methods: {
     saveData(formData) {
-      this.$http.post('/render/save', formData)
+      const apiUrl = import.meta.env.VITE_API_URL
+      this.$http.post(`${apiUrl}/save`, formData)
           .then((res) => {
             this.message = res.data;
             this.getData()
@@ -54,7 +55,7 @@ export default {
           });
     },
     getData() {
-      this.$http.get('/render/data')
+      this.$http.get(`${apiUrl}/save`)
           .then((res) => {
             this.items = res.data;
           })
