@@ -55,6 +55,7 @@ export default {
           });
     },
     getData() {
+      const apiUrl = import.meta.env.VITE_API_URL
       this.$http.get(`${apiUrl}/data`)
           .then((res) => {
             this.items = res.data;
