@@ -44,8 +44,8 @@ export default {
   },
   methods: {
     saveData(formData) {
-      const apiUrl = import.meta.env.VITE_API_URL
-      this.$http.post(`${apiUrl}/save`, formData)
+      // const apiUrl = import.meta.env.VITE_API_URL
+      this.$http.post(`/db/api/save`, formData)
           .then((res) => {
             this.message = res.data;
             this.getData()
@@ -55,10 +55,11 @@ export default {
           });
     },
     getData() {
-      const apiUrl = import.meta.env.VITE_API_URL
-      this.$http.get(`${apiUrl}/data`)
+      // const apiUrl = import.meta.env.VITE_API_URL
+      this.$http.get(`/db/api/data`)
           .then((res) => {
             this.items = res.data;
+
           })
           .catch((error) => {
             console.error(error)
