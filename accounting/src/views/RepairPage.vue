@@ -50,7 +50,7 @@ export default {
   methods: {
     saveData(formData) {
       const apiUrl = import.meta.env.VITE_API_URL
-      this.$http.post(`${apiUrl}/save1`, formData)
+      this.$http.post(`http://localhost:444/repair`, formData)
           .then((res) => {
             this.message = res.data;
             this.loaded = false
@@ -62,7 +62,7 @@ export default {
     },
     getData() {
       const apiUrl = import.meta.env.VITE_API_URL
-      this.$http.get(`${apiUrl}/data1`)
+      this.$http.get(`http://localhost:444/repair`)
           .then((res) => {
             this.items = res.data;
             this.loaded = true

@@ -44,8 +44,7 @@ export default {
   },
   methods: {
     saveData(formData) {
-      const apiUrl = import.meta.env.VITE_API_URL
-      this.$http.post(`${apiUrl}/save`, formData)
+      this.$http.post(`http://localhost:444/procurement`, formData)
           .then((res) => {
             this.message = res.data;
             this.getData()
@@ -55,8 +54,7 @@ export default {
           });
     },
     getData() {
-      const apiUrl = import.meta.env.VITE_API_URL
-      this.$http.get(`${apiUrl}/data`)
+      this.$http.get(`http://localhost:444/procurement`)
           .then((res) => {
             this.items = res.data;
           })
