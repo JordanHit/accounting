@@ -11,8 +11,8 @@ export function sumCountByRoom(data) {
         result[room].count += count;
     }
 
-    const rooms = Object.keys(result);
-    const counts = rooms.map(room => result[room].count);
-
-    return [rooms, counts];
+    return {
+        rooms: Object.keys(result),
+        counts: Object.values(result).map(({ count }) => count),
+    };
 }
