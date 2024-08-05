@@ -15,7 +15,7 @@ exports.saveData = async (req, res) => {
                     item VARCHAR(255) NOT NULL,
                     room VARCHAR(255) NOT NULL,
                     count INTEGER NOT NULL,
-                    date DATE NOT NULL
+                    date VARCHAR(255) NOT NULL
                 )
             `);
         }
@@ -57,7 +57,7 @@ exports.saveData1 = async (req, res) => {
                     id SERIAL PRIMARY KEY,
                     room VARCHAR(255) NOT NULL,
                     count INTEGER NOT NULL,
-                    date DATE NOT NULL
+                    date VARCHAR(255) NOT NULL
                 )
             `);
         }
@@ -100,7 +100,7 @@ exports.saveData2 = async (req, res) => {
                     item VARCHAR(255) NOT NULL,
                     room VARCHAR(255) NOT NULL,
                     count INTEGER NOT NULL,
-                    date DATE NOT NULL
+                    date VARCHAR(255) NULL
                 )
             `);
         }
