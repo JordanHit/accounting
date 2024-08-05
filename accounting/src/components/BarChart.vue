@@ -39,7 +39,7 @@ export default {
     this.objChart = sumCountByRoom(this.items)
     console.log(this.objChart)
     this.chartData.labels = this.objChart.rooms
-    this.chartData.datasets[0].data = this.objChart.count
+    this.chartData.datasets[0].data = this.objChart.counts
   }
 }
 </script>
