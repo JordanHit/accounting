@@ -9,7 +9,7 @@
 <script>
 import {Bar} from 'vue-chartjs'
 import {Chart as ChartJS, Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale} from 'chart.js'
-import {barData} from "@/barData.js";
+import {sumCountByRoom} from "@/js/sumCount.js";
 
 ChartJS.register(Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale)
 
@@ -36,7 +36,7 @@ export default {
     }
   },
   created() {
-    this.objChart = barData(this.items)
+    this.objChart = sumCountByRoom(this.items)
     console.log(this.objChart)
     this.chartData.labels = this.objChart.rooms
     this.chartData.datasets[0].data = this.objChart.count
