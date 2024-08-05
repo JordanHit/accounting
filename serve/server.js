@@ -5,11 +5,17 @@ const cors = require('cors');
 
 app.use(express.json());
 
-app.use(cors({
-    origin: 'https://accounting-smoky.vercel.app',
-    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-    allowedHeaders: ['Content-Type', 'Authorization']
-}));
+app.use(cors(
+    {
+        origin: 'https://accounting-smoky.vercel.app',
+        methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+        allowedHeaders: ['Content-Type', 'Authorization']
+    },
+    {
+        origin: 'https://web.postman.co',
+        methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+        allowedHeaders: ['Content-Type', 'Authorization']
+    }));
 
 
 app.use('/api', dataRoutes);
