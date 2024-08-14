@@ -26,7 +26,7 @@ app.use('/mns', createProxyMiddleware({
         '^/mns': '/grp-public/data', // Удаляет /api из пути запроса
     },
 }));
-app.get('/api/data2', (req, res) => {
+app.get('/mns', (req, res) => {
     // Данные будут автоматически проксированы
     // Результат вернется из прокси
 });
