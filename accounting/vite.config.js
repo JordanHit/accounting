@@ -15,11 +15,11 @@ export default defineConfig({
   },
   server: {
     proxy: {
-      '/nalog': {
-        target: ' http://grp.nalog.gov.by',
-        changeOrigin: true,
-        rewrite: (path) => path.replace(/^\/nalog/, ''),
-      },
+      // '/nalog': {
+      //   target: ' http://grp.nalog.gov.by',
+      //   changeOrigin: true,
+      //   rewrite: (path) => path.replace(/^\/nalog/, ''),
+      // },
     },
   },
 })
