@@ -20,7 +20,7 @@ app.use(cors(
 
 
 app.use('/mns', createProxyMiddleware({
-    target: 'http://grp.nalog.gov.by', // Замените на ваш API URL
+     // Замените на ваш API URL
     changeOrigin: true,
     pathRewrite: {
         '^/mns': '/grp-public/data', // Удаляет /api из пути запроса

@@ -49,7 +49,7 @@ export default {
   },
   methods: {
     saveData(data) {
-      const apiUrl = import.meta.env.VITE_API_URL
+      const apiUrl = import.meta.env.VITE_API_URL1
       this.$http.get(`${apiUrl}/mns`,{
         params: {
           unp: data, // передаем UNP в запрос
