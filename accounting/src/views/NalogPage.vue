@@ -49,7 +49,7 @@ export default {
   },
   methods: {
     saveData(data) {
-      this.$http.get(`http://grp.nalog.gov.by/api/grp-public/data?unp=${data}&charset=UTF-8&type=json`)
+      this.$http.get(`https://grp.nalog.gov.by/api/grp-public/data?unp=${data}&charset=UTF-8&type=json`)
           .then((res) => {
             this.message = res.data.row
             this.items.push(this.message)
