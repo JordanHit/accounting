@@ -127,3 +127,4 @@ exports.loadData2 = async (req, res) => {
         res.status(500).json({ message: 'Error loading data' });
     }
 };
+
