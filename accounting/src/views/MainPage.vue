@@ -79,42 +79,6 @@ export default {
 <style scoped>
 @import '../assets/css/bundle.css';
 
-main {
-  h1 {
-    color: var(--blue);
-    margin-bottom: 30px;
-  }
 
-  .add-items-container {
-    margin-bottom: 30px;
-  }
-
-  .table-container {
-    width: 1000px;
-
-    .customize-table {
-      --easy-table-header-font-size: 14px;
-      --easy-table-header-font-color: var(--blue);
-
-      --easy-table-header-item-padding: 10px 15px;
-
-      --easy-table-body-even-row-background-color: rgba(243, 243, 243, 0.44);
-      --easy-table-body-row-font-size: 14px;
-
-      --easy-table-body-item-padding: 10px 15px;
-
-      --easy-table-footer-font-size: 14px;
-      --easy-table-footer-padding: 0px 10px;
-      --easy-table-footer-height: 50px;
-
-      --easy-table-scrollbar-track-color: var(--blue);
-      --easy-table-scrollbar-color: var(--blue);
-      --easy-table-scrollbar-thumb-color: var(--blue);
-      --easy-table-scrollbar-corner-color: var(--blue);
-
-      --easy-table-loading-mask-background-color: var(--blue);
-    }
-  }
-}
 
 </style>

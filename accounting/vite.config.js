@@ -15,11 +15,11 @@ export default defineConfig({
   },
   server: {
     proxy: {
-      // '/db': {
-      //   target: 'https://accounting-tir9.onrender.com',
-      //   changeOrigin: true,
-      //   rewrite: (path) => path.replace(/^\/db/, ''),
-      // },
+      '/nalog': {
+        target: ' http://grp.nalog.gov.by',
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/nalog/, ''),
+      },
     },
   },
 })
