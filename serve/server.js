@@ -20,7 +20,7 @@ app.use(cors(
 
 let apiUrl = import.meta.env.VITE_API_URL1
 app.use('/mns', createProxyMiddleware({
-    target: apiUrl, // Замените на ваш API URL
+    target: `${apiUrl}`, // Замените на ваш API URL
     changeOrigin: true,
     pathRewrite: {
         '^/mns': '', // Удаляет /api из пути запроса
