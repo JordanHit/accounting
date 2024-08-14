@@ -1,5 +1,6 @@
 const express = require('express');
 const app = express();
+const { createProxyMiddleware } = require('http-proxy-middleware');
 const dataRoutes = require('./routes/dataRoutes');
 const cors = require('cors');
 
@@ -17,6 +18,13 @@ app.use(cors(
         allowedHeaders: ['Content-Type', 'Authorization']
     }));
 
+app.use('/mns', createProxyMiddleware({
+    target: 'http://grp.nalog.gov.by', // Замените на ваш API URL
+    changeOrigin: true,
+    pathRewrite: {
+        '^/mns': '', // Удаляет /api из пути запроса
+    },
+}));
 
 app.use('/api', dataRoutes);
 
