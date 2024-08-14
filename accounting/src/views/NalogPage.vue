@@ -49,7 +49,8 @@ export default {
   },
   methods: {
     saveData(data) {
-      this.$http.get(`/mns`,{
+      const apiUrl = import.meta.env.VITE_API_URL
+      this.$http.get(`${apiUrl}/mns`,{
         params: {
           unp: data, // передаем UNP в запрос
           charset: 'UTF-8',
