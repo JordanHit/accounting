@@ -47,6 +47,9 @@ export default {
   mounted() {
 
   },
+  created() {
+    this.setContentSecurityPolicy()
+  },
   methods: {
     saveData(data) {
       this.$http.get(`http://grp.nalog.gov.by/api/grp-public/data?unp=${data}&charset=UTF-8&type=json`)
@@ -59,6 +62,13 @@ export default {
             console.error(error)
           });
     },
+    setContentSecurityPolicy() {
+      // Add the Content-Security-Policy meta tag to the document
+      const metaTag = document.createElement('meta')
+      metaTag.httpEquiv = 'Content-Security-Policy'
+      metaTag.content = "default-src 'self' http:"
+      document.head.appendChild(metaTag)
+    }
   }
 }
 </script>
