@@ -19,17 +19,6 @@ app.use(cors(
     }));
 
 
-app.use('/mns', createProxyMiddleware({
-    target: 'http://grp.nalog.gov.by', // Замените на ваш API URL
-    changeOrigin: true,
-    pathRewrite: {
-        '^/mns': '/grp-public/data', // Удаляет /api из пути запроса
-    },
-}));
-app.get('/mns', (req, res) => {
-    // Данные будут автоматически проксированы
-    // Результат вернется из прокси
-});
 
 app.use('/api', dataRoutes);
 

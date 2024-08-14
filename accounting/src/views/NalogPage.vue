@@ -50,13 +50,7 @@ export default {
   methods: {
     saveData(data) {
       const apiUrl = import.meta.env.VITE_API_URL1
-      this.$http.get(`${apiUrl}/mns`,{
-        params: {
-          unp: data, // передаем UNP в запрос
-          charset: 'UTF-8',
-          type: 'json',
-        },
-      })
+      this.$http.get(`${apiUrl}/api/grp-public/data?unp=${data}&charset=UTF-8&type=json`)
           .then((res) => {
             this.message = res.data.row
             this.items.push(this.message)
