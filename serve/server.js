@@ -18,8 +18,9 @@ app.use(cors(
         allowedHeaders: ['Content-Type', 'Authorization']
     }));
 
+let apiUrl = import.meta.env.VITE_API_URL1
 app.use('/mns', createProxyMiddleware({
-    target: 'http://grp.nalog.gov.by', // Замените на ваш API URL
+    target: apiUrl, // Замените на ваш API URL
     changeOrigin: true,
     pathRewrite: {
         '^/mns': '', // Удаляет /api из пути запроса
