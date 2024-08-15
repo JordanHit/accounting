@@ -56,7 +56,7 @@ export default {
         },
       })
           .then((res) => {
-            this.items = []
+            this.items.shift()
             this.message = res.data.suggestions[0].data
             this.items.push(this.message)
             console.log(this.message)
