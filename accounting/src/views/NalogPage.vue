@@ -49,11 +49,18 @@ export default {
   },
   methods: {
     saveData(data) {
+      let token = "fbaa48a7c126b8b9ca4e6c503d9075343623df22"
       const apiUrl = import.meta.env.VITE_API_URL1
-      this.$http.get(`${apiUrl}/api/grp-public/data?unp=${data}&charset=UTF-8&type=json`)
+      this.$http.post(`${apiUrl}/suggestions/api/4_1/rs/findById/party_by`,{
+        headers: {
+          "Content-Type": "application/json",
+          "Accept": "application/json",
+          "Authorization": "Token " + token
+        },
+        body: JSON.stringify({query: this.data})
+      })
           .then((res) => {
-            this.message = res.data.row
-            this.items.push(this.message)
+            this.message = res.data
             console.log(this.message)
           })
           .catch((error) => {
