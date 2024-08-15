@@ -54,7 +54,7 @@ export default {
         headers: {
           "Content-Type": "application/json",
           "Accept": "application/json",
-          "Authorization": "Token " + "fbaa48a7c126b8b9ca4e6c503d9075343623df22"
+          "Authorization": "Token " + "dc13ed07982a4beeda328b79ff55dbfba0c27cb4"
         },
         body: JSON.stringify({query: data})
       })
