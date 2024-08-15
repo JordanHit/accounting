@@ -49,15 +49,14 @@ export default {
   },
   methods: {
     saveData(data) {
-      let token = "fbaa48a7c126b8b9ca4e6c503d9075343623df22"
       const apiUrl = import.meta.env.VITE_API_URL1
       this.$http.post(`${apiUrl}/suggestions/api/4_1/rs/findById/party_by`,{
         headers: {
           "Content-Type": "application/json",
           "Accept": "application/json",
-          "Authorization": "Token " + token
+          "Authorization": "Token " + "fbaa48a7c126b8b9ca4e6c503d9075343623df22"
         },
-        body: JSON.stringify({query: this.data})
+        body: JSON.stringify({query: data})
       })
           .then((res) => {
             this.message = res.data
