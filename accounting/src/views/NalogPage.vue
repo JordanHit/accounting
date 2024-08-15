@@ -59,7 +59,7 @@ export default {
         },
       })
           .then((res) => {
-            this.message = res.suggestions[0].data
+            this.message = res.suggestions
             this.items.push(this.message)
             console.log(this.message)
           })
