@@ -49,8 +49,9 @@ export default {
   },
   methods: {
     saveData(data) {
+      let query = JSON.stringify({query: data})
       const apiUrl = import.meta.env.VITE_API_URL1
-      this.$http.post(`${apiUrl}/suggestions/api/4_1/rs/findById/party_by`,data,{
+      this.$http.post(`${apiUrl}/suggestions/api/4_1/rs/findById/party_by`,query,{
         headers: {
           "Content-Type": "application/json",
           "Accept": "application/json",
