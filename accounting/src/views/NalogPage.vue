@@ -107,53 +107,6 @@ main{
   .table-container{
     width: 1500px;
   }
-  .radio-container {
-    .form_radio_btn {
-      display: inline-block;
-      margin-right: 10px;
-      margin-bottom: 20px;
-      color: var(--blue-light);
-      font-size: 14px;
-
-      input[type=radio] {
-        display: none;
-      }
-
-      label {
-        display: inline-block;
-        cursor: pointer;
-        padding: 0px 16px;
-        line-height: 34px;
-        font-weight: 500;
-        border: 1px var(--blue-light) solid;
-        border-radius: 12px;
-        user-select: none;
-        background-color: transparent;
-        transition: background 0.3s, color 0.3s;
-        min-width: 80px;
-        text-align: center;
-      }
-
-      /* Checked */
-      input[type=radio]:checked + label {
-        background: var(--blue);
-        color: var(--white);
-        border: none;
-      }
-
-      /* Hover */
-      label:hover {
-        background: var(--blue);
-        color: var(--white);
-      }
-
-      /* Disabled */
-      input[type=radio]:disabled + label {
-        background: #efefef;
-        color: #666;
-      }
-    }
-  }
 }
 
 
