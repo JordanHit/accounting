@@ -1,13 +1,17 @@
 <template>
   <form @submit.prevent="postData">
     <div class="input-form-container">
-      <div class="input-container">
+      <div class="input-container" v-if="formType === 'true'">
         <label for="item">УНП</label>
-        <input type="text" name="item" id="data" v-model.trim="data" placeholder="Введите УНП">
+        <input type="text" name="item" id="data" v-model.trim="data"  placeholder="Введите УНП">
+      </div>
+      <div class="input-container" v-if="formType === 'false'">
+        <label for="item">Название</label>
+        <input type="text" name="item" id="data" v-model.trim="data" placeholder="Введите название организации">
       </div>
     </div>
     <div class="button-container">
-      <button type="submit">Добавить</button>
+      <button type="submit">Поиск</button>
     </div>
   </form>
 </template>
@@ -16,7 +20,7 @@
 export default {
   name: "AddForm",
   components: {},
-  props: ['saveData'],
+  props: ['saveData','formType','saveNameData'],
   data() {
     return {
       data: '',
@@ -27,7 +31,7 @@ export default {
   },
   methods: {
     postData() {
-      this.saveData(this.data)
+      this.formType === 'true' ? this.saveData(this.data) : this.saveNameData(this.data)
     },
   }
 }
